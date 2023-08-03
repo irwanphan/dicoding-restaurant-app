@@ -8,16 +8,24 @@ body
 
 .container
     width: 100%
-    max-width: 1200px
+    max-width: 75rem
     margin: 0 auto
+    @media screen and (max-width: 75rem)
+        padding: 0 1rem
 
 // app header
 header
     background-color: var.$theme-color
     color: var.$font-color
-    padding: 0.75rem 1rem
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: 3rem
     .container
+        height: 100%
         display: flex
+        align-items: center
         justify-content: space-between
     .site-logo
         font-weight: 600
@@ -32,3 +40,14 @@ header
                 a
                     text-decoration: none
                     color: var.$font-color
+
+main
+    margin-top: 3rem
+    .hero-image
+        height: auto
+        max-height: 30rem
+        overflow: hidden
+        img
+            width: 100%
+            height: auto
+            object-fit: cover
