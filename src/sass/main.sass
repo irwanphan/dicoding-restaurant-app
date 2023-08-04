@@ -52,7 +52,18 @@ main
             height: auto
             object-fit: cover
 
+.section-title
+    font-size: 1.5rem
+    font-weight: 600
+    text-align: center
+    margin: 1rem auto
+
+.cards-holder
+    display: grid
+    grid-template-columns: repeat(3, minmax(15rem, 1fr))
+    gap: 1rem
 .card
+    position: relative
     border: 1px solid #ccc
     border-radius: 1rem
     overflow: hidden
@@ -64,6 +75,8 @@ main
             min-width: 100%
         span
             position: absolute
+            background-color: var.$theme-color
+            padding: 0.5rem 1rem
             top: 2rem
             left: 0
     .card-description
