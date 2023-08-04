@@ -43,6 +43,7 @@ header
 
 main
     margin-top: 3rem
+    margin-bottom: 2rem
     .hero-image
         height: auto
         max-height: 30rem
@@ -62,6 +63,11 @@ main
     display: grid
     grid-template-columns: repeat(3, minmax(15rem, 1fr))
     gap: 1rem
+    @media screen and (max-width: 75rem)
+        grid-template-columns: repeat(2, minmax(10rem, 1fr))
+    @media screen and (max-width: 30rem)
+        grid-template-columns: 1fr
+
 .card
     position: relative
     border: 1px solid #ccc
@@ -89,3 +95,9 @@ main
         span.title
             font-weight: 600
             display: block
+
+footer
+    background-color: var.$secondary-color
+    padding: 1.5rem 0
+    text-align: center
+    color: #fff
