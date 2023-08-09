@@ -53,7 +53,6 @@ header
         img
             height: 1.25rem
             width: 1.25rem
-            
     nav
         ul
             margin: 0
@@ -63,9 +62,15 @@ header
             gap: 0.75rem
             li
                 a
+                    padding: 0 0.5rem
+                    display: block
+                    height: 2.75rem
+                    line-height: 2.75rem
                     text-decoration: none
                     color: var.$font-color
-
+                    &:hover
+                        color: #fff
+                        text-decoration: underline
 main
     margin-top: 3rem
     margin-bottom: 2rem
@@ -129,13 +134,15 @@ main
         p
             font-size: 0.75rem
         a
+            height: 2.75rem
+            line-height: 2.75rem
             text-decoration: none
             display: inline-block
             width: fit-content
             justify-self: flex-end
             margin-top: 0.5rem
             font-weight: 600
-            padding: 0.5rem 1rem
+            padding: 0 1.25rem
             border: 1px solid var.$secondary-color
             border-radius: 0.5rem
             color: var.$secondary-color
