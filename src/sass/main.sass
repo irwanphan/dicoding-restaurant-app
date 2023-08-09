@@ -1,5 +1,6 @@
 @use 'variables' as var
     
+// normalize and general
 body
     margin: 0
     font-family: var.$font-family
@@ -8,6 +9,18 @@ body
 a
     text-decoration: none
     transition: all 0.3s ease
+    &:focus
+        outline: none
+        box-shadow: 0 0 0.5rem 0.125rem var.$theme-color
+span, p, h3
+    transition: all 0.3s ease
+    &[tabindex="0"]
+        &:focus
+            outline: 4px dashed var.$theme-color
+img
+    transition: all 0.3s ease
+    &:focus
+        filter: brightness(0.88)
 
 .container
     width: 100%
@@ -94,12 +107,14 @@ main
             min-width: 100%
             position: absolute
             bottom: 0
+            z-index: 1
         span
             position: absolute
             background-color: var.$theme-color
             padding: 0.5rem 1rem
             top: 2rem
             left: 0
+            z-index: 2
     .card-description
         padding: 0.75rem
         display: grid
