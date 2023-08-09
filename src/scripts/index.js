@@ -2,8 +2,6 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../sass/main.sass';
 
-console.log('Hello Coders! :)');
-
 import restaurantsObj from '../public/data/DATA.json';
 
 const initiate = async () => {
@@ -30,15 +28,15 @@ const initiate = async () => {
 
     const templateCard = (restaurant) => {
         return `
-            <div class="card">
+            <div class="card" key=${restaurant.id}>
                 <div class="card-header">
                     <span>${restaurant.city}</span>
-                    <img src="./images/heros/hero-image_1.jpg" width="450" alt="">
+                    <img src="${restaurant.pictureId}" width="450" alt="${restaurant.pictureId}">
                 </div>
                 <div class="card-description">
-                    <span class="rating">Rating: 4.5</span>
-                    <span class="title">Lorem Ipsum</span>
-                    <p>Lorem ipsum dolor sit amet</p>
+                    <span class="rating">Rating: ${restaurant.rating}</span>
+                    <span class="title">${restaurant.name}</span>
+                    <p>${restaurant.description}</p>
                 </div>
             </div>
         `;
