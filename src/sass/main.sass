@@ -84,10 +84,13 @@ main
     overflow: hidden
     .card-header
         overflow: hidden
-        height: 10rem
+        height: 15rem
+        position: relative
         img
             height: auto
             min-width: 100%
+            position: absolute
+            bottom: 0
         span
             position: absolute
             background-color: var.$theme-color
@@ -104,6 +107,8 @@ main
         span.title
             font-weight: 600
             display: block
+        p
+            font-size: 0.75rem
 
 footer
     background-color: var.$secondary-color
