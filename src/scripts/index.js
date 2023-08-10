@@ -8,7 +8,7 @@ const initiate = async () => {
     let isLoading = true
     const initialData = async () => {
         const restaurants = restaurantsObj.restaurants;
-        console.log(restaurants);
+        // console.log(restaurants);
         populateDataToCard(restaurants);
         isLoading = false;
     }
