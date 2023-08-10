@@ -1,4 +1,4 @@
-### DICODING-STORY APP
+### DICODING-RESTAURANT APP
 
 This is a Dicoding course-project, using SASS Preprocessor. The project is a simple web-app that displays a list of restaurants.
 
