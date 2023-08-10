@@ -30,13 +30,13 @@ const initiate = async () => {
         return `
             <div class="card" key=${restaurant.id}>
                 <div class="card-header">
-                    <span tabindex="0">${restaurant.city}</span>
-                    <img tabindex="0" src="${restaurant.pictureId}" width="450" alt="Foto ${restaurant.name}">
+                    <span>${restaurant.city}</span>
+                    <img src="${restaurant.pictureId}" width="450" alt="Foto ${restaurant.name}">
                 </div>
                 <div class="card-description">
-                    <span class="rating" tabindex="0">Rating: ${restaurant.rating}</span>
-                    <span class="title" tabindex="0">${restaurant.name}</span>
-                    <p tabindex="0">${restaurant.description}</p>
+                    <span class="rating">Rating: ${restaurant.rating}</span>
+                    <span class="title">${restaurant.name}</span>
+                    <p>${restaurant.description}</p>
                     <a href="#">
                         Explore &#9658;
                     </a>
