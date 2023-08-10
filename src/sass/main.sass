@@ -30,7 +30,22 @@ img
     margin: 0 auto
     @media screen and (max-width: 75rem)
         padding: 0 1rem
-
+.skip-link
+    position: absolute
+    top: -10rem
+    left: 1rem
+    font-size: 1rem
+    font-weight: 600
+    background-color: #fff
+    color: var.$font-color
+    border: 2px solid var.$font-color
+    border-radius: 0.5rem
+    height: 2.75rem
+    line-height: 2.75rem
+    padding: 0 1rem
+    z-index: 10
+    &:focus
+        top: 1rem
 // app header
 header
     background-color: var.$theme-color
@@ -93,7 +108,7 @@ header
                     line-height: 2.75rem
                     text-decoration: none
                     color: var.$font-color
-                    &:hover
+                    &:hover, &:focus
                         color: #fff
                         text-decoration: underline
             @media screen and (max-width: 30rem)
