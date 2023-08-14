@@ -2,7 +2,8 @@ import 'regenerator-runtime' /* for async await transpile */
 import '../styles/main.css'
 import '../sass/main.sass'
 
-import restaurantsObj from '../public/data/DATA.json'
+import './components/app-footer.js'
+
 import axios from 'axios'
 
 const fetchData = async () => {

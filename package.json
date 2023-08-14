@@ -27,6 +27,7 @@
     "karma-jasmine": "^4.0.2",
     "karma-sourcemap-loader": "^0.3.8",
     "karma-webpack": "^5.0.0",
+    "lit": "^2.8.0",
     "postcss-loader": "7.0.1",
     "prettier": "^2.8.8",
     "sass": "1.56.1",
