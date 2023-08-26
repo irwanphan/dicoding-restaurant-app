@@ -1,8 +1,9 @@
 import axios from "axios";
+import CONFIG from "../../global/config";
 
 const fetchData = async () => {
     try {
-        const { data } = await axios.get('https://restaurant-api.dicoding.dev/list')
+        const { data } = await axios.get(`${CONFIG.BASE_URL}/list`)
         const response = await data.restaurants
         // console.log(response)
         return response
