@@ -22,26 +22,24 @@ const templateRestaurantDetail = (restaurant) => {
         <section class="hero-image">
             <img src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}" width="450" alt="Foto ${restaurant.name}">
         </section>
-            
         <section class="container">
             <h3 class="section-title">${restaurant.name}</h3>
-            <small>${restaurant.address}, kota ${restaurant.city}</small>
+            <small>
+                ${restaurant.address}, at <strong>${restaurant.city}</strong>
+            </small>
             <p>${restaurant.description}</p>
-
             <p>Foods</p>
             <div class="restaurant-menu-container">
                 ${restaurant.menus.foods.map((food) => {
                     return `<div class="restaurant-menu-item">${food.name}</div>`
                 }).join('')}
             </div>
-
             <p>Drinks</p>
             <div class="restaurant-menu-container">
                 ${restaurant.menus.drinks.map((drink) => {
                     return `<div class="restaurant-menu-item">${drink.name}</div>`
                 }).join('')}
             </div>
-
             <hr/>
             <p>Customer Reviews</p>
             ${restaurant.customerReviews.map((review) => {
@@ -54,7 +52,6 @@ const templateRestaurantDetail = (restaurant) => {
                     </div>
                 `
             }).join('')}
-
         </section>
     `
 }
