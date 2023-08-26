@@ -5,14 +5,14 @@ import { templateRestaurantDetail } from '../templates/template';
 const Detail = {
   async render() {
     return `
-      <div id="restaurant">asdf</div>
+      <div id="restaurant"></div>
     `;
   },
  
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const { restaurant } = await RestaurantDbSource.restaurantDetail(url.id);
-    // console.log(restaurant)
+    console.log(restaurant)
     const restaurantContainer = document.querySelector('#restaurant');
     restaurantContainer.innerHTML = templateRestaurantDetail(restaurant);
   },

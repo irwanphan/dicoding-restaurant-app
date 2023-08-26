@@ -232,6 +232,28 @@ main
             &:hover
                 color: var.$theme-color
                 border-color: var.$theme-color
+.restaurant-menu-container
+    display: flex
+    flex-wrap: wrap
+    gap: 0.5rem
+.restaurant-menu-item
+    padding: 0.5rem 0.75rem
+    border: 1px solid
+    border-color: var.$secondary-color
+    border-radius: 0.5rem
+    background-color: lighten(var.$theme-color, 35%)
+    transition: background-color 0.3s ease
+    &:hover
+        background-color: lighten(var.$theme-color, 10%)
+
+.review-card
+    padding: 0.5rem 0.75rem
+    border: 1px solid
+    border-color: var.$secondary-color
+    border-radius: 0.5rem
+    margin-bottom: 1rem
+    p
+        margin: 0.25rem 0 0.125rem
 
 footer
     background-color: var.$secondary-color
