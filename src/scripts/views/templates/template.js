@@ -11,7 +11,7 @@ const templateCard = (restaurant) => {
                 <span class="rating">Rating: ${restaurant.rating}</span>
                 <span class="title">${restaurant.name}</span>
                 <p>${restaurant.description}</p>
-                <a href="#">
+                <a href="/#/detail/${restaurant.id}">
                     Explore &#9658
                 </a>
             </div>
@@ -19,6 +19,11 @@ const templateCard = (restaurant) => {
     `
 }
 
+const templateRestaurantDetail = () => {
+
+}
+
 export {
-    templateCard
+    templateCard,
+    templateRestaurantDetail
 }
