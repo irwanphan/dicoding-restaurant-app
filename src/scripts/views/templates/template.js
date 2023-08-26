@@ -1,5 +1,3 @@
-
-
 const templateCard = (restaurant) => {
     return `
         <div class="card" key=${restaurant.id}>
