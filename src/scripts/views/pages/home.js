@@ -1,35 +1,16 @@
 import RestaurantDbSource from "../../data/restaurantdb-source";
+import { templateCard } from "../templates/template";
 
 const populateDataToCard = (restaurants = null) => {
     if (!Array.isArray(restaurants)) {
         throw new Error('Parameter restaurants should be an array.')
     }
-
     const recordRestaurants = document.querySelector('#recordRestaurants')
     recordRestaurants.innerHTML = ''
 
     restaurants.forEach((restaurant) => {
         recordRestaurants.innerHTML += templateCard(restaurant)
     })
-}
-
-const templateCard = (restaurant) => {
-    return `
-        <div class="card" key=${restaurant.id}>
-            <div class="card-header">
-                <span>${restaurant.city}</span>
-                <img src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}" width="450" alt="Foto ${restaurant.name}">
-            </div>
-            <div class="card-description">
-                <span class="rating">Rating: ${restaurant.rating}</span>
-                <span class="title">${restaurant.name}</span>
-                <p>${restaurant.description}</p>
-                <a href="#">
-                    Explore &#9658
-                </a>
-            </div>
-        </div>
-    `
 }
 
 const Home = {
