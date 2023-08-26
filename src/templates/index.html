@@ -7,43 +7,31 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
   />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="./favicon.png">
   <title>Restaurant Apps Starter Project</title>
 </head>
 <body>
-  <a href="#maincontent" class="skip-link">Skip ke Konten!</a>
+  <a href="#mainContent" class="skip-link">Skip ke Konten!</a>
   <header>
     <div class="container">
       <div class="site-logo">
         <img src="./images/logo.svg" width="100" alt="Yell-Owl Logo">
         <span class="site-name">Yell-Owl</span>
       </div>
-      <nav>
-        <label for="nav-toggle" class="nav-toggle-label">
-          <span>&#9776;</span>
-        </label>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <nav id="navigationDrawer">
+        <button id="navigationToggleButton" class="nav-toggle">&#9776;</button>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="#">Favorite</a></li>
-          <li><a href="https://irwanphan.github.io">About Us</a></li>
+          <li><a href="#/">Home</a></li>
+          <li><a href="#/favorite">Favorite</a></li>
+          <li><a href="#/about-us">About Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main id="maincontent">
-    <section class="hero-image">
-      <img src="./images/heros/hero-image_2.jpg" width="450" alt="Selamat Datang di Yell-Owl">
-      <span class="hero-image__title">Best Restaurants Reference</span>
-    </section>
+  <main id="mainContent"></main>
 
-    <section class="container">
-      <h3 class="section-title">Explore Restaurants</h3>
-      <div class="cards-holder" id="recordRestaurants"></div>
-    </section>
-  </main>
-
-  <footer>
+  <!-- <footer>
     <app-footer></app-footer>
-  </footer>
+  </footer> -->
 </body>
 </html>
