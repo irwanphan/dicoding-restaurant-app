@@ -1,16 +1,4 @@
-import axios from "axios";
-import CONFIG from "../../global/config";
-
-const fetchData = async () => {
-    try {
-        const { data } = await axios.get(`${CONFIG.BASE_URL}/list`)
-        const response = await data.restaurants
-        // console.log(response)
-        return response
-    } catch (error) {
-        throw(error)
-    }
-}
+import RestaurantDbSource from "../../data/restaurantdb-source";
 
 const populateDataToCard = (restaurants = null) => {
     if (!Array.isArray(restaurants)) {
@@ -60,7 +48,7 @@ const Home = {
     },
 
     async afterRender() {
-        const restaurants = await fetchData()
+        const restaurants = await RestaurantDbSource.home()
         populateDataToCard(restaurants);
     },
 };
