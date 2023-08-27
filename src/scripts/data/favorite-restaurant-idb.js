@@ -24,4 +24,4 @@ const FavoriteRestaurantIdb = {
     },
 };
 
-export default FavoriteMovieIdb;
+export default FavoriteRestaurantIdb;
