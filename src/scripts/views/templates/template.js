@@ -21,7 +21,7 @@ const templateRestaurantDetail = (restaurant) => {
     return `
         <section class="hero-image">
             <img src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}" width="450" alt="Foto ${restaurant.name}">
-            <button class="toggle-favorite">&#129293; &#129505;</button>
+            <button class="favorite-toggle">&#129293; &#129505;</button>
         </section>
         <section class="container">
             <h3 class="section-title">${restaurant.name}</h3>
