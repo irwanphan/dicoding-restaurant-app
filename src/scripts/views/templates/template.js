@@ -20,7 +20,7 @@ const templateCard = (restaurant) => {
 const templateRestaurantDetail = (restaurant) => {
     return `
         <section class="hero-image">
-            <img src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}" width="450" alt="Foto ${restaurant.name}">
+            <img src="https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}" width="450" alt="Foto ${restaurant.name}">
             <div id="faveButtonContainer"></div>
         </section>
         <section class="container">
