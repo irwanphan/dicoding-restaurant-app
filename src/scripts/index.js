@@ -11,6 +11,8 @@ const app = new App({
     button: document.querySelector('#navigationToggleButton'),
     drawer: document.querySelector('#navigationDrawer'),
     content: document.querySelector('#mainContent'),
+    body: document.querySelector('#body'),
+    header: document.querySelector('#header'),
 });
 
 window.addEventListener('hashchange', () => {

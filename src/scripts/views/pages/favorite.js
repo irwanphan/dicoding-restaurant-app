@@ -4,6 +4,7 @@ import { templateCard } from "../templates/template";
 const Favorite = {
   async render() {
     return `
+      <div class="space"></div>
       <section class="container">
         <h3 class="section-title">Your Favorites</h3>
         <div class="cards-holder" id="favedRestaurants"></div>
