@@ -36,6 +36,9 @@ class AppFooter extends LitElement {
         .social > a:hover {
             color: #FFBF00;
         }
+        .inlined {
+            display: inline-block;
+        }
     `;
 
     render() {
@@ -59,7 +62,9 @@ class AppFooter extends LitElement {
                         </svg>
                     </a>
                 </div>
-                <p>copyright @ 2020 - Yello-Owl, star repo on <a href="https://github.com/irwanphan/dicoding-restaurant-app">Github</a></p>
+                <div class="inlined">
+                    <p>copyright @ 2020 - Yello-Owl, star repo on <a href="https://github.com/irwanphan/dicoding-restaurant-app">Github</a></p>
+                </div>
             </div>
         `;
     }
