@@ -41,6 +41,8 @@ class AppFooter extends LitElement {
         }
     `;
 
+  // Disable the class-methods-use-this rule for the render method
+  // eslint-disable-next-line class-methods-use-this
   render() {
     return html`
             <div class="app-footer">

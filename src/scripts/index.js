@@ -3,7 +3,7 @@ import '../styles/main.css';
 import '../sass/main.sass';
 
 import App from './views/app';
-import './components/app-footer.js';
+import './components/app-footer';
 
 import swRegister from './utils/sw-register';
 
