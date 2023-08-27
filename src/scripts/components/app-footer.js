@@ -1,7 +1,7 @@
 import { html, css, LitElement } from 'lit';
 
 class AppFooter extends LitElement {
-    static styles = css`
+  static styles = css`
         .app-footer {
             padding: 0 1rem;
         }
@@ -41,8 +41,8 @@ class AppFooter extends LitElement {
         }
     `;
 
-    render() {
-        return html`
+  render() {
+    return html`
             <div class="app-footer">
                 <p>We are social, follow us on</p>
                 <div class="social">
@@ -67,7 +67,7 @@ class AppFooter extends LitElement {
                 </div>
             </div>
         `;
-    }
+  }
 }
 
 customElements.define('app-footer', AppFooter);

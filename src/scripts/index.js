@@ -1,25 +1,25 @@
-import 'regenerator-runtime'
-import '../styles/main.css'
-import '../sass/main.sass'
+import 'regenerator-runtime';
+import '../styles/main.css';
+import '../sass/main.sass';
 
-import App from './views/app'
-import './components/app-footer.js'
+import App from './views/app';
+import './components/app-footer.js';
 
-import swRegister from './utils/sw-register'
+import swRegister from './utils/sw-register';
 
 const app = new App({
-    button: document.querySelector('#navigationToggleButton'),
-    drawer: document.querySelector('#navigationDrawer'),
-    content: document.querySelector('#mainContent'),
-    body: document.querySelector('#body'),
-    header: document.querySelector('#header'),
+  button: document.querySelector('#navigationToggleButton'),
+  drawer: document.querySelector('#navigationDrawer'),
+  content: document.querySelector('#mainContent'),
+  body: document.querySelector('#body'),
+  header: document.querySelector('#header'),
 });
 
 window.addEventListener('hashchange', () => {
-    app.renderPage()
+  app.renderPage();
 });
-   
+
 window.addEventListener('load', () => {
-    app.renderPage()
-    swRegister()
+  app.renderPage();
+  swRegister();
 });

@@ -1,5 +1,4 @@
-const templateCard = (restaurant) => {
-    return `
+const templateCard = (restaurant) => `
         <div class="card" key=${restaurant.id}>
             <div class="card-header">
                 <span>${restaurant.city}</span>
@@ -14,11 +13,9 @@ const templateCard = (restaurant) => {
                 </a>
             </div>
         </div>
-    `
-}
+    `;
 
-const templateRestaurantDetail = (restaurant) => {
-    return `
+const templateRestaurantDetail = (restaurant) => `
         <section class="hero-image">
             <img src="https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}" width="450" alt="Picture of ${restaurant.name}">
             <div id="faveButtonContainer"></div>
@@ -31,38 +28,31 @@ const templateRestaurantDetail = (restaurant) => {
             <p>${restaurant.description}</p>
             <p>Foods</p>
             <div class="restaurant-menu-container">
-                ${restaurant.menus.foods.map((food) => {
-                    return `<div class="restaurant-menu-item">${food.name}</div>`
-                }).join('')}
+                ${restaurant.menus.foods.map((food) => `<div class="restaurant-menu-item">${food.name}</div>`).join('')}
             </div>
             <p>Drinks</p>
             <div class="restaurant-menu-container">
-                ${restaurant.menus.drinks.map((drink) => {
-                    return `<div class="restaurant-menu-item">${drink.name}</div>`
-                }).join('')}
+                ${restaurant.menus.drinks.map((drink) => `<div class="restaurant-menu-item">${drink.name}</div>`).join('')}
             </div>
             <hr/>
             <p>Customer Reviews</p>
-            ${restaurant.customerReviews.map((review) => {
-                return `
+            ${restaurant.customerReviews.map((review) => `
                     <div class="review-card">
                         <small>
                             <strong>${review.name}</strong> on ${review.date}
                         </small>
                         <p>${review.review}</p>
                     </div>
-                `
-            }).join('')}
+                `).join('')}
         </section>
-    `
-}
+    `;
 
 const templateFaveButton = () => `
     <button aria-label="add as favorite" id="faveButton" class="favorite-toggle">
         &#129293;
     </button>
 `;
- 
+
 const templateFavedButton = () => `
     <button aria-label="remove favorite" id="faveButton" class="favorite-toggle">
         &#129505;
@@ -70,8 +60,8 @@ const templateFavedButton = () => `
 `;
 
 export {
-    templateCard,
-    templateRestaurantDetail,
-    templateFaveButton,
-    templateFavedButton
-}
+  templateCard,
+  templateRestaurantDetail,
+  templateFaveButton,
+  templateFavedButton,
+};

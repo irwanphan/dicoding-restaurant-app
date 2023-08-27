@@ -25,10 +25,10 @@ const AboutUs = {
       </section>
     `;
   },
-  
+
   async afterRender() {
     //
   },
 };
-  
+
 export default AboutUs;

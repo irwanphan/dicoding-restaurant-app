@@ -2,14 +2,14 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import { templateRestaurantDetail } from '../templates/template';
 import FaveButtonInitiator from '../../utils/favorite-button-initiator';
- 
+
 const Detail = {
   async render() {
     return `
       <div id="restaurant"></div>
     `;
   },
- 
+
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const { restaurant } = await RestaurantDbSource.restaurantDetail(url.id);
@@ -25,10 +25,10 @@ const Detail = {
         pictureId: restaurant.pictureId,
         description: restaurant.description,
         city: restaurant.city,
-        rating: restaurant.rating
-      }
+        rating: restaurant.rating,
+      },
     });
   },
 };
- 
+
 export default Detail;
