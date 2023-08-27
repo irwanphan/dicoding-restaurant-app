@@ -5,6 +5,8 @@ import '../sass/main.sass'
 import App from './views/app'
 import './components/app-footer.js'
 
+import swRegister from './utils/sw-register'
+
 const app = new App({
     button: document.querySelector('#navigationToggleButton'),
     drawer: document.querySelector('#navigationDrawer'),
@@ -12,9 +14,10 @@ const app = new App({
 });
 
 window.addEventListener('hashchange', () => {
-    app.renderPage();
+    app.renderPage()
 });
    
 window.addEventListener('load', () => {
-    app.renderPage();
+    app.renderPage()
+    swRegister()
 });
