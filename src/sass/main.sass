@@ -153,6 +153,10 @@ main
             border: 1px solid
             cursor: pointer
             border-color: var.$secondary-color
+            transition: all 0.25s ease
+            background-color: lighten(var.$theme-color, 35%)
+            &:hover, &:focus
+                background-color: lighten(var.$theme-color, 10%)
         &:hover, &:focus
             img
                 filter: brightness(0.50)
