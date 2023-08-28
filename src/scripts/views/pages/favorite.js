@@ -18,7 +18,7 @@ const Favorite = {
       const restaurantsContainer = document.querySelector('#favedRestaurants');
 
       restaurants.forEach((restaurant) => {
-        restaurantsContainer.innerHTML += templateCard(restaurant);
+        restaurantsContainer.innerHTML = templateCard(restaurant);
       });
     } catch (error) {
       const restaurantsContainer = document.querySelector('#favedRestaurants');
