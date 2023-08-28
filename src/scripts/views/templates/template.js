@@ -44,6 +44,14 @@ const templateRestaurantDetail = (restaurant) => `
                         <p>${review.review}</p>
                     </div>
                 `).join('')}
+            <div class="review-form">
+                <h4>Add Review</h4>
+                <form id="reviewForm">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <textarea name="review" placeholder="Your review" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </section>
     `;
 
