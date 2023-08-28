@@ -23,14 +23,20 @@ const Home = {
 
             <section class="container">
                 <h3 class="section-title">Explore Restaurants</h3>
-                <div class="cards-holder" id="recordRestaurants"></div>
+                <div class="cards-holder" id="recordRestaurants">...Loading</div>
             </section>
         `;
   },
 
   async afterRender() {
-    const restaurants = await RestaurantDbSource.home();
-    populateDataToCard(restaurants);
+    try {
+      const restaurants = await RestaurantDbSource.home();
+      populateDataToCard(restaurants);
+    } catch (error) {
+      const restaurantsContainer = document.querySelector('#recordRestaurants');
+      restaurantsContainer.innerHTML = 'Error loading restaurant list.';
+      console.error(error);
+    }
   },
 };
 
