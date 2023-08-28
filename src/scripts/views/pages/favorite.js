@@ -16,7 +16,7 @@ const Favorite = {
     try {
       const restaurants = await FavoriteRestaurantIdb.getAllFavorites();
       const restaurantsContainer = document.querySelector('#favedRestaurants');
-  
+
       restaurants.forEach((restaurant) => {
         restaurantsContainer.innerHTML += templateCard(restaurant);
       });
