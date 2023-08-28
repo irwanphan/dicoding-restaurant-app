@@ -1,6 +1,18 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import { templateCard } from '../templates/template';
 
+const populateDataToCard = (restaurants = null) => {
+  if (!Array.isArray(restaurants)) {
+    throw new Error('Parameter restaurants should be an array.');
+  }
+  const recordRestaurants = document.querySelector('#favedRestaurants');
+  recordRestaurants.innerHTML = '';
+
+  restaurants.forEach((restaurant) => {
+    recordRestaurants.innerHTML += templateCard(restaurant);
+  });
+};
+
 const Favorite = {
   async render() {
     return `
@@ -15,11 +27,7 @@ const Favorite = {
   async afterRender() {
     try {
       const restaurants = await FavoriteRestaurantIdb.getAllFavorites();
-      const restaurantsContainer = document.querySelector('#favedRestaurants');
-
-      restaurants.forEach((restaurant) => {
-        restaurantsContainer.innerHTML = templateCard(restaurant);
-      });
+      populateDataToCard(restaurants);
     } catch (error) {
       const restaurantsContainer = document.querySelector('#favedRestaurants');
       restaurantsContainer.innerHTML = 'Error loading restaurant list.';
