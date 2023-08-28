@@ -65,7 +65,7 @@ const Detail = {
 
         try {
           // console.log(data);
-          await submitReview(data)
+          await submitReview(data);
           alert('Review submitted successfully! Thank You.');
           reviewForm.reset();
           location.reload();
