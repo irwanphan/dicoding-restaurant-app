@@ -17,7 +17,7 @@ const Home = {
   async render() {
     return `
             <section class="hero-image">
-                <img src="./images/heros/hero-image_2.jpg" width="450" alt="Selamat Datang di Yell-Owl">
+                <img src="./images/heros/hero-image.jpg" width="450" alt="Selamat Datang di Yell-Owl">
                 <span class="hero-image__title">Best Restaurants Reference</span>
             </section>
 

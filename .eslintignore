@@ -1,2 +1,4 @@
 webpack.common.js
 karma.conf.js
+dist/
+node_modules/

@@ -1,5 +1,4 @@
 import 'regenerator-runtime';
-import '../styles/main.css';
 import '../sass/main.sass';
 
 import App from './views/app';
