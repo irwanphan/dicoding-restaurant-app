@@ -8,7 +8,7 @@ const AboutUs = {
       <section class="container">
         <h1>Hi, I Am Irwan</h1>
         <p>
-          This app is built based on what I learn on Dicoding Course: Become A Front-End Web Developer Expert (Menjadi Front-End Web Developer Expert). Things I learned in this course are the concept of PWA, creating App-Shell, utilizing Service Worker, caching, and working with IndexedDB.
+          This app is built based on what I learn on Dicoding Course: Become A Front-End Web Developer Expert (Menjadi Front-End Web Developer Expert). Things I learned in this course are the concept of PWA, creating App-Shell, utilizing Service Worker, caching, using Workbox and caching strategies, and working with IndexedDB.
         </p>
         <p>
           Contact me via my email on:
