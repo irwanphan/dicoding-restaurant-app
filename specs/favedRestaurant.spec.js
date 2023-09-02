@@ -10,6 +10,7 @@ describe("Faving a Restaurant", () => {
     beforeEach(() => {
         addFaveButtonContainer();
     });
+    
     it('show empty heart on the fave button when the restaurant has not been set as favorite before', async () => {
         await FaveButtonInitiator.init({
             faveButtonContainer: document.querySelector('#faveButtonContainer'),
@@ -17,7 +18,6 @@ describe("Faving a Restaurant", () => {
                 id: '1',
             },
         });
-
         expect(document.querySelector('[aria-label="add as favorite"]')).toBeTruthy();
     });
 
@@ -28,7 +28,6 @@ describe("Faving a Restaurant", () => {
                 id: '1',
             },
         });
-
         expect(document.querySelector('[aria-label="remove favorite"]')).toBeFalsy();
     });
 
@@ -39,13 +38,25 @@ describe("Faving a Restaurant", () => {
                 id: '1',
             },
         });
-
         document.querySelector('#faveButton').dispatchEvent(new Event('click'));
-
         const restaurant = await FavoriteRestaurantIdb.getFavorite('1');
         expect(restaurant).toEqual({ id: '1' });
 
         await FavoriteRestaurantIdb.deleteFavorite('1');
     });
     
+    it('should not add a fave again if it\'s already added as favorite', async () => {
+        await FaveButtonInitiator.init({
+            faveButtonContainer: document.querySelector('#faveButtonContainer'),
+            restaurant: {
+                id: '1',
+            },
+        });
+        await FavoriteRestaurantIdb.putFavorite({ id: '1' });
+        document.querySelector('#faveButton').dispatchEvent(new Event('click'));
+        // console.log(await FavoriteRestaurantIdb.getAllFavorites());
+        expect(await FavoriteRestaurantIdb.getAllFavorites()).toEqual([{ id: '1' }]);
+
+        await FavoriteRestaurantIdb.deleteFavorite('1');
+    });
 })
