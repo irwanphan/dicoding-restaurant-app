@@ -34,4 +34,16 @@ describe("Unfaving a Restaurant", () => {
         });
         expect(document.querySelector('[aria-label="add as favorite"]')).toBeFalsy();
     });
+
+    it('should be able to remove restaurant from favorite', async () => {
+        await FaveButtonInitiator.init({
+            faveButtonContainer: document.querySelector('#faveButtonContainer'),
+            restaurant: {
+                id: '1',
+            },
+        });
+        document.querySelector('[aria-label="remove favorite"]').dispatchEvent(new Event('click'));
+
+        expect(await FavoriteRestaurantIdb.getAllFavorites()).toEqual([]);
+    });
 })
