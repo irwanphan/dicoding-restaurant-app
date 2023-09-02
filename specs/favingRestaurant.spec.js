@@ -1,6 +1,5 @@
 import FaveButtonInitiator from "../src/scripts/utils/favorite-button-initiator";
 import FavoriteRestaurantIdb from "../src/scripts/data/favorite-restaurant-idb";
-import fakeIndexedDB from "fake-indexeddb";
 
 describe("Faving a Restaurant", () => {
     const addFaveButtonContainer = () => {

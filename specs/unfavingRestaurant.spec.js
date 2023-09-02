@@ -1,0 +1,37 @@
+import FaveButtonInitiator from "../src/scripts/utils/favorite-button-initiator";
+import FavoriteRestaurantIdb from "../src/scripts/data/favorite-restaurant-idb";
+
+describe("Unfaving a Restaurant", () => {
+    const addFaveButtonContainer = () => {
+        document.body.innerHTML = '<div id="faveButtonContainer"></div>';
+    }
+
+    beforeEach(async () => {
+        addFaveButtonContainer();
+        await FavoriteRestaurantIdb.putFavorite({ id: '1' });
+    });
+
+    afterEach(async () => {
+        await FavoriteRestaurantIdb.deleteFavorite('1');
+    });
+
+    it('show full heart on the fave button when the restaurant has been set as favorite before', async () => {
+        await FaveButtonInitiator.init({
+            faveButtonContainer: document.querySelector('#faveButtonContainer'),
+            restaurant: {
+                id: '1',
+            },
+        });
+        expect(document.querySelector('[aria-label="remove favorite"]')).toBeTruthy();
+    });
+
+    it('should not show empty heart fave button when the restaurant has not been set as favorite before', async () => {
+        await FaveButtonInitiator.init({
+            faveButtonContainer: document.querySelector('#faveButtonContainer'),
+            restaurant: {
+                id: '1',
+            },
+        });
+        expect(document.querySelector('[aria-label="add as favorite"]')).toBeFalsy();
+    });
+})
