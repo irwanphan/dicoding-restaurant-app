@@ -46,4 +46,18 @@ describe("Unfaving a Restaurant", () => {
 
         expect(await FavoriteRestaurantIdb.getAllFavorites()).toEqual([]);
     });
+
+    it('should not throw error if the unfaved restaurant is not in the list', async () => {
+        await FaveButtonInitiator.init({
+            faveButtonContainer: document.querySelector('#faveButtonContainer'),
+            restaurant: {
+                id: '1',
+            },
+        });
+        // delete it, simulate the condition where it is not in the list
+        await FavoriteRestaurantIdb.deleteFavorite('1');
+        document.querySelector('[aria-label="remove favorite"]').dispatchEvent(new Event('click'));
+
+        expect(await FavoriteRestaurantIdb.getAllFavorites()).toEqual([]);
+    });
 })
