@@ -59,12 +59,12 @@ describe("Faving a Restaurant", () => {
         await FavoriteRestaurantIdb.deleteFavorite('1');
     });
 
-    xit('should not add a restaurant when it has no id', async () => {
+    it('should not add a restaurant when it has no id', async () => {
         await FaveButtonInitiator.init({
             faveButtonContainer: document.querySelector('#faveButtonContainer'),
             restaurant: {},
         });
         document.querySelector('#faveButton').dispatchEvent(new Event('click'));
-        expect(await FavoriteRestaurantIdb.getAllMovies()).toEqual([]);
+        expect(await FavoriteRestaurantIdb.getAllFavorites()).toEqual([]);
     });
 })
