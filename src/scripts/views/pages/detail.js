@@ -3,6 +3,7 @@ import RestaurantDbSource from '../../data/restaurantdb-source';
 import { templateRestaurantDetail } from '../templates/template';
 import FaveButtonInitiator from '../../utils/favorite-button-initiator';
 import API_ENDPOINT from '../../global/api-endpoint';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 async function submitReview(data) {
   const url = API_ENDPOINT.REVIEW;
@@ -38,6 +39,7 @@ const Detail = {
 
       FaveButtonInitiator.init({
         faveButtonContainer: document.querySelector('#faveButtonContainer'),
+        favoriteRestaurants: FavoriteRestaurantIdb,
         restaurant: {
           id: restaurant.id,
           name: restaurant.name,
