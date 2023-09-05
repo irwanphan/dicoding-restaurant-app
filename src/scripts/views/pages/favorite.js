@@ -8,6 +8,11 @@ const populateDataToCard = (restaurants = null) => {
   const recordRestaurants = document.querySelector('#favedRestaurants');
   recordRestaurants.innerHTML = '';
 
+  if (restaurants.length === 0) {
+    recordRestaurants.innerHTML = 'You have no favorite restaurant :(';
+    return;
+  }
+
   restaurants.forEach((restaurant) => {
     recordRestaurants.innerHTML += templateCard(restaurant);
   });
