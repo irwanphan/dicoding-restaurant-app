@@ -20,5 +20,10 @@ exports.config = {
   include: {
     I: './steps_file.js'
   },
-  name: 'dicoding-restaurant-app'
+  name: 'dicoding-restaurant-app',
+  plugins: {
+    screenshotOnFail: {
+      enabled: false,
+    },
+  },
 }
