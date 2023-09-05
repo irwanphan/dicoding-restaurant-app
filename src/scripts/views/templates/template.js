@@ -36,7 +36,7 @@ const templateRestaurantDetail = (restaurant) => `
             </div>
             <hr/>
             <p>Customer Reviews</p>
-            ${restaurant.customerReviews.map((review) => `
+                ${restaurant.customerReviews.map((review) => `
                     <div class="review-card">
                         <small>
                             <strong>${review.name}</strong> on ${review.date}
