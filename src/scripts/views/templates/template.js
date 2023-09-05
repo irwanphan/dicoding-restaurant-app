@@ -61,7 +61,7 @@ const templateFaveButton = () => `
     </button>
 `;
 
-const templateFavedButton = () => `
+const templateUnfaveButton = () => `
     <button aria-label="remove favorite" id="faveButton" class="favorite-toggle">
         &#129505;
     </button>
@@ -71,5 +71,5 @@ export {
   templateCard,
   templateRestaurantDetail,
   templateFaveButton,
-  templateFavedButton,
+  templateUnfaveButton,
 };

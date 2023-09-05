@@ -1,5 +1,5 @@
 import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
-import { templateFaveButton, templateFavedButton } from '../views/templates/template';
+import { templateFaveButton, templateUnfaveButton } from '../views/templates/template';
 
 const FaveButtonInitiator = {
   async init({ faveButtonContainer, restaurant }) {
@@ -35,7 +35,7 @@ const FaveButtonInitiator = {
   },
 
   _renderFaved() {
-    this._faveButtonContainer.innerHTML = templateFavedButton();
+    this._faveButtonContainer.innerHTML = templateUnfaveButton();
 
     const faveButton = document.querySelector('#faveButton');
     faveButton.addEventListener('click', async () => {
