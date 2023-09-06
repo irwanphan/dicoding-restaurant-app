@@ -17,7 +17,10 @@ const templateCard = (restaurant) => `
 
 const templateRestaurantDetail = (restaurant) => `
         <section class="hero-image">
-            <img src="https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}" width="450" alt="Picture of ${restaurant.name}">
+            <picture>
+                <source media="(max-width: 640px)" srcset="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}">
+                <img src="https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}" width="450" alt="${restaurant.name}">
+            </picture>
             <div id="faveButtonContainer"></div>
         </section>
         <section class="container">
