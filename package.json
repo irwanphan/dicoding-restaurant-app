@@ -44,6 +44,7 @@
     "style-loader": "^3.3.1",
     "teenyicons": "^0.4.1",
     "webpack": "^5.73.0",
+    "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
@@ -54,6 +55,7 @@
     "axios": "^1.4.0",
     "fake-indexeddb": "^4.0.2",
     "idb": "^7.1.1",
+    "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.9",
     "workbox-window": "^7.0.0"
   }
