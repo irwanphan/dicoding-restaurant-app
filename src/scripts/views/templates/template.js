@@ -2,7 +2,7 @@ const templateCard = (restaurant) => `
         <div class="card" key=${restaurant.id}>
             <div class="card-header">
                 <span>${restaurant.city}</span>
-                <img src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}" width="450" alt="Foto ${restaurant.name}">
+                <img src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}" width="450" alt="${restaurant.name}">
             </div>
             <div class="card-description">
                 <span class="rating">Rating: ${restaurant.rating}</span>
