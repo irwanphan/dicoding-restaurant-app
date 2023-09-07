@@ -1,10 +1,23 @@
 import { templateCard } from '../templates/template';
 
+const preloadHeroImage = (src) => {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => {
+      resolve(image);
+    };
+    image.onerror = () => {
+      reject(new Error('Failed to preload hero image.'));
+    };
+    image.src = src;
+  });
+};
+
 const Home = {
   async render() {
     return `
       <section class="hero-image">
-        <img src="./images/heros/hero-image.jpg" width="450" alt="Selamat Datang di Yell-Owl">
+        <img/>
         <span class="hero-image__title">Best Restaurants Reference</span>
       </section>
       <section class="container">
@@ -18,6 +31,15 @@ const Home = {
     try {
       const { default: RestaurantDbSource } = await import('../../data/restaurantdb-source');
       const restaurants = await RestaurantDbSource.home();
+
+      const heroImageSrc = './images/heros/hero-image.jpg';
+      await preloadHeroImage(heroImageSrc);
+
+      const heroImage = document.querySelector('.hero-image img');
+      heroImage.src = heroImageSrc;
+      heroImage.width = 450;
+      heroImage.alt = 'Selamat Datang di Yell-Owl';
+      // heroImageContainer.appendChild(heroImage);
 
       populateDataToCard(restaurants);
     } catch (error) {
