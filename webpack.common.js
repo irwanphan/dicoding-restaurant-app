@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -85,5 +86,12 @@ module.exports = {
       ],
     }),
     new BundleAnalyzerPlugin(),
+    // new CompressionPlugin({
+    //   filename: 'compressed/[path].gz[query]',
+    //   algorithm: 'gzip',
+    //   test: /\.(js|sass|html|svg)$/, 
+    //   threshold: 10240,
+    //   minRatio: 0.8,
+    // }),
   ],
 };
