@@ -17,7 +17,7 @@ const Home = {
   async render() {
     return `
       <section class="hero-image">
-        <img/>
+        <img width="640" height="360"/>
         <span class="hero-image__title">Best Restaurants Reference</span>
       </section>
       <section class="container">
@@ -37,9 +37,9 @@ const Home = {
 
       const heroImage = document.querySelector('.hero-image img');
       heroImage.src = heroImageSrc;
-      heroImage.width = 450;
+      // heroImage.width = 450;
+      // heroImage.height = auto;
       heroImage.alt = 'Selamat Datang di Yell-Owl';
-      // heroImageContainer.appendChild(heroImage);
 
       populateDataToCard(restaurants);
     } catch (error) {

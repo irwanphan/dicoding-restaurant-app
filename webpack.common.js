@@ -4,7 +4,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-// const CompressionPlugin = require('compression-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -16,6 +19,8 @@ module.exports = {
     clean: true,
   },
   optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
@@ -43,6 +48,9 @@ module.exports = {
       {
         test: /\.(s[ac]ss)$/i,
         use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           {
             loader: 'style-loader',
           },
@@ -86,12 +94,13 @@ module.exports = {
       ],
     }),
     new BundleAnalyzerPlugin(),
-    // new CompressionPlugin({
-    //   filename: 'compressed/[path].gz[query]',
-    //   algorithm: 'gzip',
-    //   test: /\.(js|sass|html|svg)$/, 
-    //   threshold: 10240,
-    //   minRatio: 0.8,
-    // }),
+    new CompressionPlugin({
+      filename: 'compressed/[name].[contenthash].gz',
+      algorithm: 'gzip',
+      test: /\.(js|sass|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+    new MiniCssExtractPlugin()
   ],
 };
