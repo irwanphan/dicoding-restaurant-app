@@ -17,7 +17,10 @@ const Home = {
   async render() {
     return `
       <section class="hero-image">
-        <img width="640" height="360"/>
+        <picture>
+          <source media="(max-width: 640px)" >
+          <img width="960" height="540"/>
+        </picture>
         <span class="hero-image__title">Best Restaurants Reference</span>
       </section>
       <section class="container">
@@ -32,13 +35,14 @@ const Home = {
       const { default: RestaurantDbSource } = await import('../../data/restaurantdb-source');
       const restaurants = await RestaurantDbSource.home();
 
-      const heroImageSrc = './images/heros/hero-image.jpg';
+      const heroImageSrcset = './images/hero-image-small.jpg';
+      const heroImageSrc = './images/hero-image-large.jpg';
       await preloadHeroImage(heroImageSrc);
 
-      const heroImage = document.querySelector('.hero-image img');
+      const heroImageSmall = document.querySelector('.hero-image picture source');
+      const heroImage = document.querySelector('.hero-image picture img');
+      heroImageSmall.srcset = heroImageSrcset;
       heroImage.src = heroImageSrc;
-      // heroImage.width = 450;
-      // heroImage.height = auto;
       heroImage.alt = 'Selamat Datang di Yell-Owl';
 
       populateDataToCard(restaurants);

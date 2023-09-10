@@ -1,4 +1,5 @@
 webpack.common.js
 karma.conf.js
 dist/
+public/
 node_modules/

@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && npm run build-image",
     "serve": "http-server public",
     "test": "karma start karma.conf.js",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "Irwan Phan <irwanphan@gmail.com>",
@@ -44,6 +45,7 @@
     "prettier": "^2.8.8",
     "sass": "1.56.1",
     "sass-loader": "13.2.0",
+    "sharp": "^0.32.5",
     "style-loader": "^3.3.1",
     "teenyicons": "^0.4.1",
     "terser-webpack-plugin": "^5.3.9",
