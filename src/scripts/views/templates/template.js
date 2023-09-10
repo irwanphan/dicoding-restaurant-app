@@ -1,9 +1,6 @@
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
-const START = 10;
-const NUMBER_OF_IMAGES = 100;
-
 const templateCard = (restaurant) => `
         <div class="card" key=${restaurant.id}>
             <div class="card-header">

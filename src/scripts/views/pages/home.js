@@ -1,15 +1,25 @@
 import { templateCard } from '../templates/template';
 
-const preloadHeroImage = (src) => {
-  return new Promise((resolve, reject) => {
-    const image = new Image();
-    image.onload = () => {
-      resolve(image);
-    };
-    image.onerror = () => {
-      reject(new Error('Failed to preload hero image.'));
-    };
-    image.src = src;
+const preloadHeroImage = (src) => new Promise((resolve, reject) => {
+  const image = new Image();
+  image.onload = () => {
+    resolve(image);
+  };
+  image.onerror = () => {
+    reject(new Error('Failed to preload hero image.'));
+  };
+  image.src = src;
+});
+
+const populateDataToCard = (restaurants = null) => {
+  if (!Array.isArray(restaurants)) {
+    throw new Error('Parameter restaurants should be an array.');
+  }
+  const recordRestaurants = document.querySelector('#recordRestaurants');
+  recordRestaurants.innerHTML = '';
+
+  restaurants.forEach((restaurant) => {
+    recordRestaurants.innerHTML += templateCard(restaurant);
   });
 };
 
@@ -53,18 +63,6 @@ const Home = {
       console.error(error);
     }
   },
-};
-
-const populateDataToCard = (restaurants = null) => {
-  if (!Array.isArray(restaurants)) {
-    throw new Error('Parameter restaurants should be an array.');
-  }
-  const recordRestaurants = document.querySelector('#recordRestaurants');
-  recordRestaurants.innerHTML = '';
-
-  restaurants.forEach((restaurant) => {
-    recordRestaurants.innerHTML += templateCard(restaurant);
-  });
 };
 
 export default Home;
