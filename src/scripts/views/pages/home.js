@@ -36,12 +36,13 @@ const Home = {
       const restaurants = await RestaurantDbSource.home();
 
       const heroImageSrcset = './images/hero-image-small.jpg';
+      await preloadHeroImage(heroImageSrcset);
+      const heroImageSmall = document.querySelector('.hero-image picture source');
+      heroImageSmall.srcset = heroImageSrcset;
+
       const heroImageSrc = './images/hero-image-large.jpg';
       await preloadHeroImage(heroImageSrc);
-
-      const heroImageSmall = document.querySelector('.hero-image picture source');
       const heroImage = document.querySelector('.hero-image picture img');
-      heroImageSmall.srcset = heroImageSrcset;
       heroImage.src = heroImageSrc;
       heroImage.alt = 'Selamat Datang di Yell-Owl';
 
