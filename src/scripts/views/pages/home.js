@@ -19,7 +19,7 @@ const Home = {
       <section class="hero-image">
         <picture>
           <source media="(max-width: 640px)" >
-          <img width="960" height="540"/>
+          <img width="640" height="360"/>
         </picture>
         <span class="hero-image__title">Best Restaurants Reference</span>
       </section>
